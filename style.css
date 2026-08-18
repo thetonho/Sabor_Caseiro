@@ -1,0 +1,239 @@
+/* =========================================================
+   VARIÁVEIS DE COR / TIPOGRAFIA
+   ========================================================= */
+:root {
+  --brown-dark: #3a2419;      /* header/footer */
+  --brown-medium: #5c3d2e;    /* botões */
+  --cream-bg: #f7f0e3;        /* fundo da página */
+  --cream-card: #f0e4c9;      /* fundo do card cardápio */
+  --pill-bg: #e4d9c4;         /* fundo do selo "Comida caseira" */
+  --accent-red: #8b1e1e;      /* palavra "marmita" */
+  --text-dark: #2b1d14;
+  --text-muted: #5a4a3d;
+  --white: #ffffff;
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: var(--cream-bg);
+  color: var(--text-dark);
+}
+
+/* =========================================================
+   BACKGROUND DECORATIVO (ícones de talheres/potes)
+   -> Deixei separado para você inserir sua imagem de fundo.
+   Basta trocar background-image por: url('sua-imagem.png');
+   ========================================================= */
+.hero-section {
+  min-height: calc(100vh - 130px);
+  background-color: var(--cream-bg);
+  background-image: none; /* <-- coloque aqui a imagem de fundo (ex: url('bg-pattern.png')) */
+  background-repeat: repeat;
+  background-size: 400px;
+  background-position: center;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+.site-header {
+  background-color: var(--brown-dark);
+}
+
+.logo-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: var(--white);
+  color: var(--accent-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1;
+  border: 2px solid var(--accent-red);
+}
+
+.nav-link-custom {
+  color: var(--white);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+}
+
+.nav-link-custom:hover {
+  opacity: 0.8;
+  color: var(--white);
+}
+
+/* =========================================================
+   HERO / CONTEÚDO PRINCIPAL
+   ========================================================= */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--pill-bg);
+  color: var(--text-dark);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text-dark);
+}
+
+.text-accent {
+  color: var(--accent-red);
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+  max-width: 550px;
+  line-height: 1.6;
+}
+
+.btn-cta {
+  background-color: var(--brown-dark);
+  color: var(--white);
+  border: none;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-cta:hover {
+  background-color: var(--brown-medium);
+  color: var(--white);
+  transform: translateY(-1px);
+}
+
+.mini-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--pill-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+  font-size: 0.85rem;
+}
+
+/* =========================================================
+   CARD "CARDÁPIO DO DIA"
+   ========================================================= */
+.menu-card {
+  background-color: var(--cream-card);
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 380px;
+  box-shadow: 0 15px 35px rgba(58, 36, 25, 0.12);
+}
+
+.menu-card-title {
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.6rem;
+  color: var(--text-dark);
+  margin-bottom: 1.25rem;
+}
+
+.menu-card-img-wrap {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 260px;
+  height: 260px;
+  margin: 0 auto 1.25rem;
+  border: 6px solid var(--white);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.menu-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-card-dish {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.menu-card-desc {
+  text-align: center;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer {
+  background-color: var(--brown-dark);
+}
+
+.footer-icon-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--cream-bg);
+  font-size: 1.3rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.footer-icon-btn:hover {
+  background-color: rgba(255,255,255,0.1);
+  color: var(--white);
+}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+@media (max-width: 991.98px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+  .menu-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-title {
+    font-size: 1.9rem;
+  }
+  .menu-card-img-wrap {
+    width: 200px;
+    height: 200px;
+  }
+}
