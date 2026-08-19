@@ -3,7 +3,7 @@
    ========================================================= */
 :root {
   --brown-dark: #3a2419;      /* header/footer */
-  --brown-medium: #5c3d2e;    /* botões */
+  --brown-medium: #5c3d2e;    /* botões hover */
   --cream-bg: #f7f0e3;        /* fundo da página */
   --cream-card: #f0e4c9;      /* fundo do card cardápio */
   --pill-bg: #e4d9c4;         /* fundo do selo "Comida caseira" */
@@ -15,6 +15,7 @@
 
 * {
   font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
 
 body {
@@ -23,40 +24,21 @@ body {
 }
 
 /* =========================================================
-   BACKGROUND DECORATIVO (ícones de talheres/potes)
-   -> Deixei separado para você inserir sua imagem de fundo.
-   Basta trocar background-image por: url('sua-imagem.png');
-   ========================================================= */
-.hero-section {
-  min-height: calc(100vh - 130px);
-  background-color: var(--cream-bg);
-  background-image: none; /* <-- coloque aqui a imagem de fundo (ex: url('bg-pattern.png')) */
-  background-repeat: repeat;
-  background-size: 400px;
-  background-position: center;
-}
-
-/* =========================================================
-   HEADER
+   HEADER & LOGO
    ========================================================= */
 .site-header {
   background-color: var(--brown-dark);
 }
 
-.logo-badge {
-  width: 48px;
+.logo-img {
   height: 48px;
-  border-radius: 50%;
-  background-color: var(--white);
-  color: var(--accent-red);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 8px;
-  font-weight: 800;
-  line-height: 1;
-  border: 2px solid var(--accent-red);
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.03);
 }
 
 .nav-link-custom {
@@ -65,6 +47,7 @@ body {
   font-size: 0.95rem;
   font-weight: 500;
   transition: opacity 0.2s ease;
+  display: inline-block;
 }
 
 .nav-link-custom:hover {
@@ -72,9 +55,42 @@ body {
   color: var(--white);
 }
 
+/* Carrinho no Header */
+.cart-btn {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: var(--white);
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  background-color: var(--accent-red);
+  color: var(--white);
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* =========================================================
    HERO / CONTEÚDO PRINCIPAL
    ========================================================= */
+.hero-section {
+  min-height: calc(100vh - 65px);
+  background-color: var(--cream-bg);
+}
+
 .badge-pill {
   display: inline-flex;
   align-items: center;
@@ -118,102 +134,196 @@ body {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
 }
 
 .btn-cta:hover {
   background-color: var(--brown-medium);
   color: var(--white);
-  transform: translateY(-1px);
-}
-
-.mini-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background-color: var(--pill-bg);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-dark);
-  font-size: 0.85rem;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(58, 36, 25, 0.2);
 }
 
 /* =========================================================
    CARD "CARDÁPIO DO DIA"
    ========================================================= */
 .menu-card {
-  background-color: var(--cream-card);
-  border-radius: 24px;
-  padding: 32px;
-  max-width: 380px;
-  box-shadow: 0 15px 35px rgba(58, 36, 25, 0.12);
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 24px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 10px 30px rgba(58, 36, 25, 0.08);
+  border: 1px solid rgba(221, 208, 186, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(58, 36, 25, 0.12);
 }
 
 .menu-card-title {
-  text-align: center;
   font-weight: 800;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--text-dark);
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .menu-card-img-wrap {
-  border-radius: 50%;
+  border-radius: 12px;
   overflow: hidden;
-  width: 260px;
-  height: 260px;
-  margin: 0 auto 1.25rem;
-  border: 6px solid var(--white);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  width: 100%;
+  height: 220px;
+  margin-bottom: 1.25rem;
+  background-color: #e0e0e0;
 }
 
 .menu-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .menu-card-dish {
-  text-align: center;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--text-dark);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.menu-card-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.15rem;
 }
 
 .menu-card-desc {
-  text-align: center;
   font-size: 0.92rem;
-  color: var(--text-muted);
+  color: var(--text-dark);
   margin-bottom: 1.5rem;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 /* =========================================================
-   FOOTER
+   LAYOUT DE CADASTRO (CENTRALIZADO)
    ========================================================= */
-.site-footer {
-  background-color: var(--brown-dark);
+.signup-wrap {
+  min-height: calc(100vh - 65px);
+  background-color: var(--cream-bg);
 }
 
-.footer-icon-btn {
-  background-color: transparent;
-  border: none;
-  color: var(--cream-bg);
-  font-size: 1.3rem;
-  width: 44px;
-  height: 44px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.2s ease;
+.signup-form-inner {
+  width: 100%;
+  max-width: 480px;
+  padding: 40px;
+  background-color: var(--white);
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(58, 36, 25, 0.08);
 }
 
-.footer-icon-btn:hover {
-  background-color: rgba(255,255,255,0.1);
-  color: var(--white);
+.logo-img-card {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-name {
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.signup-title {
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: var(--text-dark);
+}
+
+.signup-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* =========================================================
+   CAMPOS DO FORMULÁRIO
+   ========================================================= */
+.form-label-custom {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--text-dark);
+  margin-bottom: 0.4rem;
+  display: block;
+}
+
+.form-control-custom {
+  border: 1px solid #ddd0ba;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  background-color: var(--white);
+  width: 100%;
+}
+
+.form-control-custom:focus {
+  border-color: var(--brown-medium);
+  box-shadow: 0 0 0 3px rgba(92, 61, 46, 0.15);
+}
+
+.password-wrap {
+  position: relative;
+  width: 100%;
+}
+
+.password-wrap .form-control-custom {
+  padding-right: 40px;
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 5;
+}
+
+.login-link {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.login-link a {
+  color: var(--text-dark);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* =========================================================
+   ANIMAÇÃO DE ENTRADA / TROCA DE PÁGINA (FADE + SLIDE)
+   ========================================================= */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.signup-form-inner,
+.hero-section .container {
+  animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* =========================================================
@@ -221,10 +331,7 @@ body {
    ========================================================= */
 @media (max-width: 991.98px) {
   .hero-title {
-    font-size: 2.4rem;
-  }
-  .menu-card {
-    max-width: 100%;
+    font-size: 2.5rem;
   }
 }
 
@@ -232,8 +339,12 @@ body {
   .hero-title {
     font-size: 1.9rem;
   }
-  .menu-card-img-wrap {
-    width: 200px;
-    height: 200px;
+  .logo-img {
+    height: 38px;
+  }
+  .signup-form-inner {
+    padding: 28px 20px;
+    border-radius: 16px;
+    margin: 0 12px;
   }
 }

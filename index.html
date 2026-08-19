@@ -1,115 +1,101 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sabor Caseiro - Monte sua marmita</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabor Caseiro - Início</title>
 
-<!-- Bootstrap CSS -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
-<!-- Bootstrap Icons -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Custom CSS -->
-<link rel="stylesheet" href="style.css">
+  <!-- Estilos Customizados -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
-<header class="site-header">
-  <div class="container-fluid px-4">
-    <div class="d-flex align-items-center justify-content-between py-2">
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container-fluid px-4">
+      <div class="d-flex align-items-center justify-content-between py-2">
 
-      <!-- Logo -->
-      <div class="d-flex align-items-center gap-4">
-        <div class="logo-badge">
-          <span>SABOR<br>CASEIRO</span>
+        <!-- Logo e Navegação -->
+        <div class="d-flex align-items-center gap-4">
+          <a href="index.html" class="navbar-brand me-2">
+            <img src="./img/logoooo.png" alt="Sabor Caseiro" class="logo-img">
+          </a>
+          <nav class="d-none d-md-flex gap-4">
+            <a href="index.html" class="nav-link-custom">Início</a>
+            <a href="montarmarmita.html" class="nav-link-custom">Montar Marmita</a>
+          </nav>
         </div>
-        <nav class="d-none d-md-flex gap-4">
-          <a href="#" class="nav-link-custom active-link">Início</a>
-          <a href="#" class="nav-link-custom">Montar Marmita</a>
-        </nav>
-      </div>
 
-      <!-- Auth buttons -->
-      <div class="d-flex align-items-center gap-4">
-        <a href="#" class="nav-link-custom">Entrar</a>
-        <a href="#" class="nav-link-custom fw-bold">Cadastrar</a>
-      </div>
-
-    </div>
-  </div>
-</header>
-
-<!-- ===== MAIN / HERO ===== -->
-<main class="hero-section">
-  <div class="container-fluid px-4 px-lg-5 py-5">
-    <div class="row align-items-center gy-5">
-
-      <!-- Left column -->
-      <div class="col-lg-7">
-        <span class="badge-pill">
-          <i class="bi bi-leaf-fill"></i> Comida caseira de verdade
-        </span>
-
-        <h1 class="hero-title mt-4">
-          Monte sua <span class="text-accent">marmita</span><br>
-          perfeita do seu jeito
-        </h1>
-
-        <p class="hero-subtitle">
-          Escolha seus ingredientes favoritos e receba uma marmita<br class="d-none d-lg-block">
-          fresquinha, nutritiva e deliciosa direto na sua porta.<br class="d-none d-lg-block">
-          Comida saudável nunca foi tão fácil!
-        </p>
-
-        <button class="btn btn-cta mt-3">
-          Montar minha marmita <i class="bi bi-arrow-right"></i>
-        </button>
-
-        <div class="d-flex align-items-center gap-2 mt-4">
-          <span class="mini-icon"><i class="bi bi-leaf-fill"></i></span>
-          <span class="fw-semibold">100% Caseira</span>
-        </div>
-      </div>
-
-      <!-- Right column: Cardápio do dia card -->
-      <div class="col-lg-5">
-        <div class="menu-card mx-auto">
-          <h3 class="menu-card-title">Cardápio do dia</h3>
-
-          <div class="menu-card-img-wrap">
-            <img src="https://placehold.co/600x400/png?text=Foto+do+Prato" alt="Frango empanado com acompanhamentos" class="menu-card-img">
-          </div>
-
-          <h4 class="menu-card-dish">Frango empanado</h4>
-          <p class="menu-card-desc">
-            acompanhado por:<br>
-            arroz, batata rústica, creme de milho e frango empanado
-          </p>
-
-          <button class="btn btn-cta w-100">
-            Montar Marmita <i class="bi bi-arrow-right"></i>
+        <!-- Carrinho e Autenticação -->
+        <div class="d-flex align-items-center gap-4">
+          <button class="cart-btn" type="button" aria-label="Carrinho">
+            <i class="bi bi-cart-fill"></i>
+            <span class="cart-badge">0</span>
           </button>
+          <a href="login.html" class="nav-link-custom">Entrar</a>
+          <a href="cadastro.html" class="nav-link-custom">Cadastrar</a>
         </div>
+
       </div>
-
     </div>
-  </div>
-</main>
+  </header>
 
-<!-- ===== FOOTER ===== -->
-<footer class="site-footer">
-  <div class="container-fluid px-4">
-    <div class="d-flex align-items-center justify-content-between py-3">
-      <button class="footer-icon-btn"><i class="bi bi-house-fill"></i></button>
-      <button class="footer-icon-btn"><i class="bi bi-cart-fill"></i></button>
+  <!-- ===== CONTEÚDO PRINCIPAL (HERO) ===== -->
+  <main class="hero-section d-flex align-items-center py-5">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        
+        <!-- Lado Esquerdo: Texto Hero -->
+        <div class="col-lg-6">
+        <div class="badge-pill mb-3">
+            Comida caseira & saudável
+        </div>
+          <h1 class="hero-title">
+            Sua <span class="text-accent">marmita</span> com sabor de casa
+          </h1>
+          <p class="hero-subtitle">
+            Alimentação de verdade, preparada diariamente com ingredientes selecionados e o tempero afetuoso que você merece.
+          </p>
+          <div class="mt-4">
+            <a href="montarmarmita.html" class="btn btn-cta">
+              Montar Marmita <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Lado Direito: Card "Cardápio do Dia" -->
+        <div class="col-lg-6 d-flex justify-content-center">
+          <div class="menu-card">
+            <h2 class="menu-card-title">Cardápio do dia</h2>
+            
+            <div class="menu-card-img-wrap">
+              <img src="https://placehold.co/600x400/png?text=Foto+do+Prato" alt="Frango empanado com acompanhamentos" class="menu-card-img">
+            </div>
+
+            <div class="menu-card-content">
+              <h3 class="menu-card-dish">Frango empanado</h3>
+              <p class="menu-card-subtitle">acompanhado por:</p>
+              <p class="menu-card-desc">arroz, batata rústica, creme de milho e frango empanado</p>
+              
+              <a href="montarmarmita.html" class="btn btn-cta w-100">
+                Montar Marmita <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
-</footer>
+  </main>
 
+  <script src="script.js"></script>
 </body>
 </html>
