@@ -349,42 +349,200 @@ body {
   }
 }
 
+/* =========================================================
+   BOTÕES / CARDS DE ESCOLHA DA MARMITA
+   ========================================================= */
+
+/* =========================================================
+   CARDS DE MARMITA
+   ========================================================= */
+
 .btn-marmita {
   background-color: var(--white);
   color: var(--text-dark);
-  border: 2px solid #ddd0ba;
-  border-radius: 15px;
-  padding: 24px 20px;
-  min-height: 150px;
+
+  /* Sem contorno escuro */
+  border: 1px solid rgba(221, 208, 186, 0.45);
+  border-radius: 18px;
+
+  padding: 24px 22px;
+  min-height: 190px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 7px;
 
-  transition: 0.2s ease;
+  /* Sombra inicial suave */
+  box-shadow:
+    0 5px 12px rgba(58, 36, 25, 0.05),
+    0 2px 4px rgba(58, 36, 25, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease,
+    background-color 0.3s ease;
 }
 
-.btn-marmita strong {
+/* Nome */
+.btn-marmita strong:first-child {
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 800;
+  color: var(--text-dark);
 }
 
-.btn-marmita span {
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
-
-.btn-marmita span:last-child {
+/* Preço */
+.btn-marmita strong:nth-child(2) {
+  font-size: 1.35rem;
+  font-weight: 800;
   color: var(--accent-red);
-  font-size: 1.1rem;
-  font-weight: 700;
+  margin-bottom: 8px;
 }
+
+/* Informações */
+.btn-marmita span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* =========================================================
+   HOVER — PROFUNDIDADE
+   ========================================================= */
 
 .btn-marmita:hover {
-  border-color: var(--brown-medium);
-  background-color: #f7f0e3;
+  background-color: #fffdf9;
+
+  /* Remove qualquer aparência de contorno */
+  border-color: rgba(221, 208, 186, 0.25);
+
+  /* Elevação */
+  transform: translateY(-8px);
+
+  /* Sombra mais profunda */
+  box-shadow:
+    0 22px 40px rgba(58, 36, 25, 0.14),
+    0 8px 16px rgba(58, 36, 25, 0.08);
+}
+
+/* Clique */
+.btn-marmita:active {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(58, 36, 25, 0.12);
+
+  box-shadow:
+    0 10px 20px rgba(58, 36, 25, 0.10);
+}
+
+/* =========================================================
+   RESUMO / TOTAL DA MARMITA
+   ========================================================= */
+
+.marmita-summary {
+  width: 100%;
+  margin-top: 32px;
+
+  background-color: var(--white);
+  border-radius: 18px;
+  padding: 18px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  border: 1px solid rgba(221, 208, 186, 0.4);
+
+  box-shadow:
+    0 6px 18px rgba(58, 36, 25, 0.06);
+}
+
+/* Valor */
+.summary-total {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.summary-total span {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.summary-total strong {
+  color: var(--text-dark);
+  font-size: 1.45rem;
+  font-weight: 800;
+}
+
+/* Botão Próximo */
+.btn-next-marmita {
+  background-color: var(--brown-dark);
+  color: var(--white);
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 12px 22px;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.btn-next-marmita:hover {
+  background-color: var(--brown-medium);
+  color: var(--white);
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 18px rgba(58, 36, 25, 0.18);
+}
+
+.btn-next-marmita i {
+  font-size: 1rem;
+}
+
+/* Responsivo */
+@media (max-width: 575.98px) {
+  .marmita-summary {
+    padding: 16px;
+  }
+
+  .summary-total strong {
+    font-size: 1.25rem;
+  }
+
+  .btn-next-marmita {
+    padding: 11px 17px;
+  }
+}
+
+.marmita-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+
+.marmita-section-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+  text-align: left;
 }
