@@ -348,3 +348,43 @@ body {
     margin: 0 12px;
   }
 }
+
+.btn-marmita {
+  background-color: var(--white);
+  color: var(--text-dark);
+  border: 2px solid #ddd0ba;
+  border-radius: 15px;
+  padding: 24px 20px;
+  min-height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  transition: 0.2s ease;
+}
+
+.btn-marmita strong {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.btn-marmita span {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.btn-marmita span:last-child {
+  color: var(--accent-red);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.btn-marmita:hover {
+  border-color: var(--brown-medium);
+  background-color: #f7f0e3;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(58, 36, 25, 0.12);
+}
