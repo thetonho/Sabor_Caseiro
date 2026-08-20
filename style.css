@@ -1,16 +1,40 @@
 /* =========================================================
-   VARIÁVEIS DE COR / TIPOGRAFIA
+   VARIÁVEIS DE COR / TIPOGRAFIA (TEMA CLARO E ESCURO VÍVIDO)
    ========================================================= */
 :root {
-  --brown-dark: #3a2419;      /* header/footer */
-  --brown-medium: #5c3d2e;    /* botões hover */
-  --cream-bg: #f7f0e3;        /* fundo da página */
-  --cream-card: #f0e4c9;      /* fundo do card cardápio */
-  --pill-bg: #e4d9c4;         /* fundo do selo "Comida caseira" */
-  --accent-red: #8b1e1e;      /* palavra "marmita" */
+  /* Tema Claro (Padrão) */
+  --brown-dark: #3a2419;
+  --brown-medium: #5c3d2e;
+  --cream-bg: #f7f0e3;
+  --overlay-bg: rgba(247, 240, 227, 0.75);
+  --cream-card: #f0e4c9;
+  --pill-bg: #e4d9c4;
+  --accent-red: #8b1e1e;
   --text-dark: #2b1d14;
   --text-muted: #5a4a3d;
   --white: #ffffff;
+  --card-bg: #ffffff;
+  --border-color: rgba(221, 208, 186, 0.5);
+  --input-bg: #ffffff;
+  --input-border: #ddd0ba;
+}
+
+[data-theme="dark"] {
+  /* Tema Escuro - Otimizado e com Alto Contraste */
+  --brown-dark: #1b120c;
+  --brown-medium: #6b4331;
+  --cream-bg: #12100e;
+  --overlay-bg: rgba(15, 12, 10, 0.92);      /* Escurece a imagem de fundo com elegância */
+  --cream-card: #281f19;
+  --pill-bg: #2e231c;
+  --accent-red: #e05244;                       /* Vermelho vibrante/terracota de destaque */
+  --text-dark: #f9f3ea;                        /* Texto principal super claro e legível */
+  --text-muted: #d1bead;                      /* Subtítulos bem visíveis */
+  --white: #ffffff;
+  --card-bg: #1e1814;                          /* Fundo dos cards bem definido */
+  --border-color: rgba(184, 134, 98, 0.25);   /* Bordas elegantes em tom bronze */
+  --input-bg: #27201b;
+  --input-border: #4d3a2d;
 }
 
 * {
@@ -18,9 +42,19 @@
   box-sizing: border-box;
 }
 
+/* Background aplicado globalmente */
 body {
-  background-color: var(--cream-bg);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
   color: var(--text-dark);
+  background-image: linear-gradient(var(--overlay-bg), var(--overlay-bg)), url('./img/background.jpeg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--cream-bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* =========================================================
@@ -28,6 +62,8 @@ body {
    ========================================================= */
 .site-header {
   background-color: var(--brown-dark);
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
 }
 
 .logo-img {
@@ -46,16 +82,33 @@ body {
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
-  transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease, color 0.2s ease;
   display: inline-block;
 }
 
 .nav-link-custom:hover {
-  opacity: 0.8;
+  opacity: 0.85;
   color: var(--white);
 }
 
-/* Carrinho no Header */
+/* Botões do Header (Tema e Carrinho) */
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  color: #ffc107; /* Cor amarela vívida para o ícone de lua/sol */
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+.theme-toggle-btn:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 6px rgba(255, 193, 7, 0.6));
+}
+
 .cart-btn {
   position: relative;
   background: transparent;
@@ -75,8 +128,8 @@ body {
   color: var(--white);
   font-size: 0.65rem;
   font-weight: 700;
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -88,7 +141,7 @@ body {
    ========================================================= */
 .hero-section {
   min-height: calc(100vh - 65px);
-  background-color: var(--cream-bg);
+  background-color: transparent;
 }
 
 .badge-pill {
@@ -101,6 +154,8 @@ body {
   border-radius: 30px;
   font-size: 0.9rem;
   font-weight: 500;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .hero-title {
@@ -123,7 +178,7 @@ body {
 }
 
 .btn-cta {
-  background-color: var(--brown-dark);
+  background-color: var(--accent-red);
   color: var(--white);
   border: none;
   padding: 14px 28px;
@@ -143,26 +198,26 @@ body {
   background-color: var(--brown-medium);
   color: var(--white);
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(58, 36, 25, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* =========================================================
    CARD "CARDÁPIO DO DIA"
    ========================================================= */
 .menu-card {
-  background-color: var(--white);
+  background-color: var(--card-bg);
   border-radius: 20px;
   padding: 24px;
   width: 100%;
   max-width: 440px;
-  box-shadow: 0 10px 30px rgba(58, 36, 25, 0.08);
-  border: 1px solid rgba(221, 208, 186, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .menu-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(58, 36, 25, 0.12);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
 }
 
 .menu-card-title {
@@ -178,7 +233,7 @@ body {
   width: 100%;
   height: 220px;
   margin-bottom: 1.25rem;
-  background-color: #e0e0e0;
+  background-color: var(--pill-bg);
 }
 
 .menu-card-img {
@@ -209,20 +264,22 @@ body {
 }
 
 /* =========================================================
-   LAYOUT DE CADASTRO (CENTRALIZADO)
+   LAYOUT DE CADASTRO E LOGIN
    ========================================================= */
 .signup-wrap {
   min-height: calc(100vh - 65px);
-  background-color: var(--cream-bg);
+  background-color: transparent;
 }
 
 .signup-form-inner {
   width: 100%;
   max-width: 480px;
   padding: 40px;
-  background-color: var(--white);
+  background-color: var(--card-bg);
   border-radius: 24px;
-  box-shadow: 0 15px 35px rgba(58, 36, 25, 0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
 }
 
 .logo-img-card {
@@ -260,17 +317,20 @@ body {
 }
 
 .form-control-custom {
-  border: 1px solid #ddd0ba;
+  border: 1px solid var(--input-border);
   border-radius: 8px;
   padding: 10px 14px;
   font-size: 0.95rem;
-  background-color: var(--white);
+  background-color: var(--input-bg);
+  color: var(--text-dark);
   width: 100%;
+  transition: border-color 0.2s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 .form-control-custom:focus {
-  border-color: var(--brown-medium);
-  box-shadow: 0 0 0 3px rgba(92, 61, 46, 0.15);
+  outline: none;
+  border-color: var(--accent-red);
+  box-shadow: 0 0 0 3px rgba(224, 82, 68, 0.25);
 }
 
 .password-wrap {
@@ -302,13 +362,170 @@ body {
 }
 
 .login-link a {
-  color: var(--text-dark);
+  color: var(--accent-red);
   font-weight: 600;
   text-decoration: underline;
 }
 
 /* =========================================================
-   ANIMAÇÃO DE ENTRADA / TROCA DE PÁGINA (FADE + SLIDE)
+   CARDS DE MARMITA
+   ========================================================= */
+.marmita-section-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+.marmita-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+
+.btn-marmita {
+  background-color: var(--card-bg);
+  color: var(--text-dark);
+  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  padding: 24px 22px;
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-marmita strong:first-child {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+}
+
+.btn-marmita strong:nth-child(2) {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--accent-red);
+  margin-bottom: 8px;
+}
+
+.btn-marmita span {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.btn-marmita:hover {
+  background-color: var(--pill-bg);
+  border-color: var(--accent-red);
+  transform: translateY(-8px);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.3);
+}
+
+.btn-marmita:active {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================================================
+   RESUMO / TOTAL DA MARMITA
+   ========================================================= */
+.marmita-summary {
+  width: 100%;
+  margin-top: 32px;
+  background-color: var(--card-bg);
+  border-radius: 18px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.summary-total {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.summary-total span {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.summary-total strong {
+  color: var(--accent-red);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.btn-next-marmita {
+  background-color: var(--accent-red);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  padding: 12px 22px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  cursor: pointer;
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-next-marmita:hover {
+  background-color: var(--brown-medium);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn-next-marmita i {
+  font-size: 1rem;
+}
+
+/* =========================================================
+   SEÇÃO DO CARRINHO
+   ========================================================= */
+.cart-section {
+  min-height: calc(100vh - 65px);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+.cart-empty {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.cart-empty-title {
+  font-weight: 800;
+  font-style: italic;
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.cart-empty-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  margin-bottom: 1.75rem;
+}
+
+/* =========================================================
+   ANIMAÇÃO DE ENTRADA E RESPONSIVO
    ========================================================= */
 @keyframes fadeInUp {
   from {
@@ -326,9 +543,6 @@ body {
   animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* =========================================================
-   RESPONSIVO
-   ========================================================= */
 @media (max-width: 991.98px) {
   .hero-title {
     font-size: 2.5rem;
@@ -347,202 +561,13 @@ body {
     border-radius: 16px;
     margin: 0 12px;
   }
-}
-
-/* =========================================================
-   BOTÕES / CARDS DE ESCOLHA DA MARMITA
-   ========================================================= */
-
-/* =========================================================
-   CARDS DE MARMITA
-   ========================================================= */
-
-.btn-marmita {
-  background-color: var(--white);
-  color: var(--text-dark);
-
-  /* Sem contorno escuro */
-  border: 1px solid rgba(221, 208, 186, 0.45);
-  border-radius: 18px;
-
-  padding: 24px 22px;
-  min-height: 190px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-
-  /* Sombra inicial suave */
-  box-shadow:
-    0 5px 12px rgba(58, 36, 25, 0.05),
-    0 2px 4px rgba(58, 36, 25, 0.04);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease,
-    background-color 0.3s ease;
-}
-
-/* Nome */
-.btn-marmita strong:first-child {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--text-dark);
-}
-
-/* Preço */
-.btn-marmita strong:nth-child(2) {
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: var(--accent-red);
-  margin-bottom: 8px;
-}
-
-/* Informações */
-.btn-marmita span {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  line-height: 1.4;
-}
-
-/* =========================================================
-   HOVER — PROFUNDIDADE
-   ========================================================= */
-
-.btn-marmita:hover {
-  background-color: #fffdf9;
-
-  /* Remove qualquer aparência de contorno */
-  border-color: rgba(221, 208, 186, 0.25);
-
-  /* Elevação */
-  transform: translateY(-8px);
-
-  /* Sombra mais profunda */
-  box-shadow:
-    0 22px 40px rgba(58, 36, 25, 0.14),
-    0 8px 16px rgba(58, 36, 25, 0.08);
-}
-
-/* Clique */
-.btn-marmita:active {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 10px 20px rgba(58, 36, 25, 0.10);
-}
-
-/* =========================================================
-   RESUMO / TOTAL DA MARMITA
-   ========================================================= */
-
-.marmita-summary {
-  width: 100%;
-  margin-top: 32px;
-
-  background-color: var(--white);
-  border-radius: 18px;
-  padding: 18px 22px;
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-
-  border: 1px solid rgba(221, 208, 186, 0.4);
-
-  box-shadow:
-    0 6px 18px rgba(58, 36, 25, 0.06);
-}
-
-/* Valor */
-.summary-total {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.summary-total span {
-  color: var(--text-muted);
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.summary-total strong {
-  color: var(--text-dark);
-  font-size: 1.45rem;
-  font-weight: 800;
-}
-
-/* Botão Próximo */
-.btn-next-marmita {
-  background-color: var(--brown-dark);
-  color: var(--white);
-
-  border: none;
-  border-radius: 10px;
-
-  padding: 12px 22px;
-
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem;
-  font-weight: 600;
-
-  display: flex;
-  align-items: center;
-  gap: 9px;
-
-  cursor: pointer;
-
-  transition:
-    transform 0.25s ease,
-    background-color 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.btn-next-marmita:hover {
-  background-color: var(--brown-medium);
-  color: var(--white);
-
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 8px 18px rgba(58, 36, 25, 0.18);
-}
-
-.btn-next-marmita i {
-  font-size: 1rem;
-}
-
-/* Responsivo */
-@media (max-width: 575.98px) {
   .marmita-summary {
     padding: 16px;
   }
-
   .summary-total strong {
     font-size: 1.25rem;
   }
-
   .btn-next-marmita {
     padding: 11px 17px;
   }
-}
-
-.marmita-subtitle {
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 28px;
-}
-
-.marmita-section-title {
-  font-size: 1.8rem;
-  font-weight: 800;
-  color: var(--text-dark);
-  margin-bottom: 4px;
-  text-align: left;
 }
