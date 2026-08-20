@@ -34,12 +34,20 @@
           </nav>
         </div>
 
-        <!-- Carrinho e Autenticação -->
-        <div class="d-flex align-items-center gap-4">
-          <button class="cart-btn" type="button" aria-label="Carrinho">
+        <!-- Tema, Carrinho e Autenticação -->
+        <div class="d-flex align-items-center gap-3 gap-md-4">
+          
+          <!-- Botão de Alternar Tema -->
+          <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Alternar tema">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+
+          <!-- Carrinho -->
+          <a href="carrinho.html" class="cart-btn" aria-label="Carrinho">
             <i class="bi bi-cart-fill"></i>
             <span class="cart-badge">0</span>
-          </button>
+          </a>
+
           <a href="login.html" class="nav-link-custom">Entrar</a>
           <a href="cadastro.html" class="nav-link-custom">Cadastrar</a>
         </div>
@@ -55,9 +63,9 @@
         
         <!-- Lado Esquerdo: Texto Hero -->
         <div class="col-lg-6">
-        <div class="badge-pill mb-3">
+          <div class="badge-pill mb-3">
             Comida caseira & saudável
-        </div>
+          </div>
           <h1 class="hero-title">
             Sua <span class="text-accent">marmita</span> com sabor de casa
           </h1>
@@ -96,6 +104,9 @@
     </div>
   </main>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript Customizado -->
   <script src="script.js"></script>
 </body>
 </html>

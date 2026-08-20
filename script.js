@@ -1,10 +1,50 @@
 document.addEventListener("DOMContentLoaded", () => {
   // =========================================================
-  // 1. SISTEMA DO CARRINHO (APENAS BOTÃO DE MARMITA)
+  // 1. SISTEMA DE TEMA (CLARO / ESCURO)
+  // =========================================================
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  const currentTheme = localStorage.getItem("theme");
+
+  // Aplica o tema salvo previamente (se houver)
+  if (currentTheme === "dark") {
+    document.documentElement.setAttribute("data-theme", "dark");
+    updateThemeIcon(true);
+  }
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+
+      if (isDark) {
+        document.documentElement.removeAttribute("data-theme");
+        localStorage.setItem("theme", "light");
+        updateThemeIcon(false);
+      } else {
+        document.documentElement.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+        updateThemeIcon(true);
+      }
+    });
+  }
+
+  function updateThemeIcon(isDark) {
+    if (!themeToggleBtn) return;
+    const icon = themeToggleBtn.querySelector("i") || themeToggleBtn;
+    
+    if (isDark) {
+      icon.classList.remove("bi-moon-stars-fill");
+      icon.classList.add("bi-sun-fill");
+    } else {
+      icon.classList.remove("bi-sun-fill");
+      icon.classList.add("bi-moon-stars-fill");
+    }
+  }
+
+  // =========================================================
+  // 2. SISTEMA DO CARRINHO
   // =========================================================
   let cartCount = 0;
 
-  // Seleciona APENAS os botões que possuem a classe .btn-add-cart
   const btnAddCart = document.querySelectorAll(".btn-add-cart");
   const cartBtnFooter = document.querySelector(".site-footer .bi-cart-fill")?.parentElement;
   const cartBadgeHeader = document.querySelector(".cart-badge");
@@ -20,7 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Só adiciona ao carrinho se for o botão do produto
   btnAddCart.forEach((button) => {
     button.addEventListener("click", (e) => {
       e.preventDefault();
@@ -42,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // =========================================================
-  // 2. MOSTRAR / OCULTAR SENHA
+  // 3. MOSTRAR / OCULTAR SENHA
   // =========================================================
   const passwordToggles = document.querySelectorAll(".password-toggle");
 
