@@ -30,17 +30,25 @@
           </a>
           <nav class="d-none d-md-flex gap-4">
             <a href="index.html" class="nav-link-custom">Início</a>
-            <a href="#" class="nav-link-custom">Montar Marmita</a>
+            <a href="montarmarmita.html" class="nav-link-custom">Montar Marmita</a>
           </nav>
         </div>
 
-        <!-- Carrinho e Autenticação -->
-        <div class="d-flex align-items-center gap-4">
-          <button class="cart-btn" type="button" aria-label="Carrinho">
+        <!-- Tema, Carrinho e Autenticação -->
+        <div class="d-flex align-items-center gap-3 gap-md-4">
+          
+          <!-- Botão de Alternar Tema -->
+          <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Alternar tema">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+
+          <!-- Carrinho -->
+          <a href="carrinho.html" class="cart-btn" aria-label="Carrinho">
             <i class="bi bi-cart-fill"></i>
             <span class="cart-badge">0</span>
-          </button>
-          <a href="#" class="nav-link-custom">Entrar</a>
+          </a>
+
+          <a href="login.html" class="nav-link-custom">Entrar</a>
           <a href="cadastro.html" class="nav-link-custom">Cadastrar</a>
         </div>
 
@@ -52,8 +60,8 @@
   <main class="signup-wrap d-flex align-items-center justify-content-center py-5">
     <div class="signup-form-inner">
       
-      <!-- Cabeçalho do Card (Logo e Texto coladinhos) -->
-      <div class="d-flex align-items-center justify-content-center gap-1 mb-3">
+      <!-- Cabeçalho do Card -->
+      <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
         <img src="./img/logoooo.png" alt="Sabor Caseiro" class="logo-img-card">
         <span class="brand-name fs-5">Sabor Caseiro</span>
       </div>
@@ -63,7 +71,7 @@
         <p class="signup-subtitle m-0">Preencha os dados abaixo para começar</p>
       </div>
 
-      <!-- Formulário -->
+      <!-- Formulário de Cadastro -->
       <form>
         <div class="mb-3">
           <label for="nome" class="form-label-custom">Nome Completo</label>
@@ -103,12 +111,15 @@
         </div>
 
         <button type="submit" class="btn btn-cta w-100">Criar conta</button>
-        <p class="login-link">Já tem uma conta? <a href="#">Faça login</a></p>
+        <p class="login-link mt-3">Já tem uma conta? <a href="login.html">Faça login</a></p>
       </form>
 
     </div>
   </main>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript Customizado -->
   <script src="script.js"></script>
 </body>
 </html>

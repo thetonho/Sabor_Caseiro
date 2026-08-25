@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sabor Caseiro - Entrar</title>
+  <title>Sabor Caseiro - Carrinho</title>
 
   <!-- Bootstrap CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
@@ -15,6 +15,7 @@
 
   <!-- Estilos Customizados -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="carrinho.css">
 </head>
 <body>
 
@@ -56,42 +57,26 @@
     </div>
   </header>
 
-  <!-- ===== CONTEÚDO: FORMULÁRIO DE LOGIN CENTRALIZADO ===== -->
-  <main class="signup-wrap d-flex align-items-center justify-content-center py-5">
-    <div class="signup-form-inner">
-      
-      <!-- Cabeçalho do Card -->
-      <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
-        <img src="./img/logoooo.png" alt="Sabor Caseiro" class="logo-img-card">
-        <span class="brand-name fs-5">Sabor Caseiro</span>
+  <!-- ===== CONTEÚDO DO CARRINHO ===== -->
+  <main class="cart-section">
+    <div class="container">
+
+      <!-- ESTADO: CARRINHO VAZIO -->
+      <div class="cart-empty text-center py-5">
+        <h2 class="cart-empty-title">Seu carrinho está vazio</h2>
+        <p class="cart-empty-subtitle">Que tal pedir uma marmita deliciosa?</p>
+        <a href="montarmarmita.html" class="btn btn-cta">
+          Montar Marmita <i class="bi bi-arrow-right"></i>
+        </a>
       </div>
 
-      <div class="text-center mb-4">
-        <h2 class="signup-title">Acesse sua conta</h2>
-        <p class="signup-subtitle m-0">Bem-vindo de volta! Digite seus dados para entrar.</p>
+      <!-- ESTADO: CARRINHO COM ITENS (Exemplo estrutural)
+      <div class="cart-items">
+        <div class="cart-item">
+          ...
+        </div>
       </div>
-
-      <!-- Formulário de Login -->
-      <form>
-        <div class="mb-3">
-          <label for="email" class="form-label-custom">Email</label>
-          <input type="email" class="form-control form-control-custom" id="email" placeholder="seu@email.com" required>
-        </div>
-
-        <div class="mb-3">
-          <div class="d-flex justify-content-between align-items-center mb-1">
-            <label for="senha" class="form-label-custom mb-0">Senha</label>
-            <a href="#" class="login-link text-decoration-none m-0" style="font-size: 0.8rem;">Esqueceu a senha?</a>
-          </div>
-          <div class="password-wrap">
-            <input type="password" class="form-control form-control-custom" id="senha" placeholder="••••••••" required>
-            <i class="bi bi-eye-slash password-toggle"></i>
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-cta w-100 mt-3">Entrar</button>
-        <p class="login-link mt-3">Ainda não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
-      </form>
+      -->
 
     </div>
   </main>
