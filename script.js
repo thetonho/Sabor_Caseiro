@@ -2321,15 +2321,23 @@ document.addEventListener("DOMContentLoaded", () => {
      MODAL
      ========================================================= */
 
-  function removeModal(id = "admin-custom-modal") {
+ function removeModal(id = "admin-custom-modal") {
 
-    const modal =
-      document.getElementById(id);
+  const modal = document.getElementById(id);
 
-    if (modal) {
-      modal.remove();
-    }
-  }
+  if (!modal) return;
+
+  modal.remove();
+
+  // Remove possíveis restos de backdrop
+  document
+    .querySelectorAll(".admin-modal-backdrop")
+    .forEach(backdrop => backdrop.remove());
+
+  // Libera o scroll da página
+  document.body.style.overflow = "";
+  document.body.classList.remove("modal-open");
+}
 
 
   /* =========================================================
@@ -2359,5 +2367,4 @@ document.addEventListener("DOMContentLoaded", () => {
   ) {
     updateDashboard();
   }
-
 });
