@@ -878,15 +878,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     modal
       .querySelector(".admin-modal-close")
-      .onclick = removeModal;
+      .onclick = () => removeModal();
 
     modal
       .querySelector(".admin-modal-backdrop")
-      .onclick = removeModal;
+      .onclick = () => removeModal();
 
     modal
       .querySelector("#cancel-menu")
-      .onclick = removeModal;
+      .onclick = () => removeModal();
 
     modal
       .querySelector("#add-accompaniment")
@@ -1567,15 +1567,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     modal
       .querySelector(".admin-modal-close")
-      .onclick = removeModal;
+      .onclick = () => removeModal();
 
     modal
       .querySelector(".admin-modal-backdrop")
-      .onclick = removeModal;
+      .onclick = () => removeModal();
 
     modal
       .querySelector("#close-order")
-      .onclick = removeModal;
+      .onclick = () => removeModal();
 
     modal
       .querySelector("#advance-order")
@@ -1811,15 +1811,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     modal
       .querySelector(".admin-modal-close")
-      .onclick = removeModal;
+      .onclick = () => removeModal();
 
     modal
       .querySelector(".admin-modal-backdrop")
-      .onclick = removeModal;
+      .onclick = () => removeModal();
 
     modal
       .querySelector("#close-customer")
-      .onclick = removeModal;
+      .onclick = () => removeModal();
   }
 
 
@@ -1961,7 +1961,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ) {
 
           window.location.href =
-            "admin.html";
+            "administrador.html";
 
           return;
         }

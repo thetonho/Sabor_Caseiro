@@ -3,19 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sabor Caseiro - Entrar</title>
+
+  <title>Sabor Caseiro - Montar Marmita</title>
 
   <!-- Bootstrap CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
   <!-- Bootstrap Icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet"
+  >
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Estilos Customizados -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <!-- ===== HEADER ===== -->
@@ -56,49 +67,70 @@
     </div>
   </header>
 
-  <!-- ===== CONTEÚDO: FORMULÁRIO DE LOGIN CENTRALIZADO ===== -->
-  <main class="signup-wrap d-flex align-items-center justify-content-center py-5">
-    <div class="signup-form-inner">
-      
-      <!-- Cabeçalho do Card -->
-      <div class="d-flex align-items-center justify-content-center gap-2 mb-3">
-        <img src="./img/logoooo.png" alt="Sabor Caseiro" class="logo-img-card">
-        <span class="brand-name fs-5">Sabor Caseiro</span>
+  <!-- ===== CONTEÚDO PRINCIPAL ===== -->
+  <main class="container py-5">
+    
+    <h2 class="text-center mb-4">Monte sua marmita</h2>
+    <h3 class="marmita-section-title mb-4">Escolha o tamanho da sua marmita:</h3>
+
+    <div class="row justify-content-center g-4">
+
+      <!-- Marmitex P -->
+      <div class="col-12 col-md-4">
+        <button type="button" class="btn btn-marmita w-100">
+          <strong>Marmitex P - 500Ml</strong>
+          <strong>R$ 18,00</strong>
+          <span>• 1 carboidrato</span>
+          <span>• 1 proteína</span>
+          <span>• 1 acompanhamento</span>
+        </button>
       </div>
 
-      <div class="text-center mb-4">
-        <h2 class="signup-title">Acesse sua conta</h2>
-        <p class="signup-subtitle m-0">Bem-vindo de volta! Digite seus dados para entrar.</p>
+      <!-- Marmitex M -->
+      <div class="col-12 col-md-4">
+        <button type="button" class="btn btn-marmita w-100">
+          <strong>Marmitex M - 760Ml</strong>
+          <strong>R$ 22,00</strong>
+          <span>• 2 carboidratos</span>
+          <span>• 2 proteínas</span>
+          <span>• 2 acompanhamentos</span>
+        </button>
       </div>
 
-      <!-- Formulário de Login -->
-      <form>
-        <div class="mb-3">
-          <label for="email" class="form-label-custom">Email</label>
-          <input type="email" class="form-control form-control-custom" id="email" placeholder="seu@email.com" required>
-        </div>
-
-        <div class="mb-3">
-          <div class="d-flex justify-content-between align-items-center mb-1">
-            <label for="senha" class="form-label-custom mb-0">Senha</label>
-            <a href="#" class="login-link text-decoration-none m-0" style="font-size: 0.8rem;">Esqueceu a senha?</a>
-          </div>
-          <div class="password-wrap">
-            <input type="password" class="form-control form-control-custom" id="senha" placeholder="••••••••" required>
-            <i class="bi bi-eye-slash password-toggle"></i>
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-cta w-100 mt-3">Entrar</button>
-        <p class="login-link mt-3">Ainda não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
-      </form>
+      <!-- Marmitex G -->
+      <div class="col-12 col-md-4">
+        <button type="button" class="btn btn-marmita w-100">
+          <strong>Marmitex G - 1100Ml</strong>
+          <strong>R$ 24,00</strong>
+          <span>• 3 carboidratos</span>
+          <span>• 2 proteínas</span>
+          <span>• 2 acompanhamentos</span>
+        </button>
+      </div>
 
     </div>
+
+    <!-- RESUMO DO PEDIDO -->
+<div class="marmita-summary">
+  <div class="summary-total">
+    <span>Valor total</span>
+    <strong>R$ 0,00</strong>
+  </div>
+
+  <a href="montarmarmita2.html" class="next-link">
+    <button type="button" class="btn-next-marmita">
+      Próximo <i class="bi bi-arrow-right"></i>
+    </button>
+  </a>
+</div>
+
+
   </main>
 
   <!-- Bootstrap JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
   <!-- JavaScript Customizado -->
   <script src="script.js"></script>
+
 </body>
 </html>

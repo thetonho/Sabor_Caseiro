@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sabor Caseiro - Montar Marmita</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container-fluid px-4">
+      <div class="d-flex align-items-center justify-content-between py-2">
+        <div class="d-flex align-items-center gap-4">
+          <a href="index.html" class="navbar-brand me-2"><img src="./img/logoooo.png" alt="Sabor Caseiro" class="logo-img"></a>
+          <nav class="d-none d-md-flex gap-4">
+            <a href="index.html" class="nav-link-custom">Início</a>
+            <a href="montarmarmita.html" class="nav-link-custom">Montar Marmita</a>
+          </nav>
+        </div>
+        <div class="d-flex align-items-center gap-3 gap-md-4">
+          <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Alternar tema"><i class="bi bi-moon-stars-fill"></i></button>
+          <a href="carrinho.html" class="cart-btn" aria-label="Carrinho"><i class="bi bi-cart-fill"></i><span class="cart-badge">0</span></a>
+          <a href="login.html" class="nav-link-custom">Entrar</a>
+          <a href="cadastro.html" class="nav-link-custom">Cadastrar</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container py-5">
+    <h2 class="text-center mb-4">Monte sua marmita</h2>
+    <div class="row justify-content-center mb-5 text-center text-secondary fw-semibold">
+      <div class="col-auto d-flex align-items-center mb-2"><span class="step-icon step-checked">✓</span><span class="ms-2 text-dark">Tamanho</span><div class="step-line ms-3 d-none d-sm-block"></div></div>
+      <div class="col-auto d-flex align-items-center mb-2"><span class="step-icon step-checked">✓</span><span class="ms-2 text-dark">Proteína</span><div class="step-line ms-3 d-none d-sm-block"></div></div>
+      <div class="col-auto d-flex align-items-center mb-2"><span class="step-icon step-checked">✓</span><span class="ms-2 text-dark">Carboidrato</span><div class="step-line ms-3 d-none d-sm-block"></div></div>
+      <div class="col-auto d-flex align-items-center mb-2"><span class="step-icon step-active">4</span><span class="ms-2 text-dark">Acompanhamento</span></div>
+    </div>
+
+    <h3 class="fw-bold mb-4 ms-2 text-dark">Escolha o acompanhamento:</h3>
+    <div class="row g-4 px-2 mb-5">
+      <div class="col-12 col-md-6 col-lg-4"><button type="button" class="btn btn-marmita-proteina w-100 d-flex align-items-center p-3 text-start"><div class="img-container me-3 bg-light overflow-hidden"><img src="./img/batata-rustica.svg" alt="Batata Rústica"></div><div class="text-white overflow-hidden"><strong class="d-block fs-5 mb-1 text-truncate">Batata Rústica</strong><span class="d-block small text-light text-truncate opacity-75">Batata assada temperada.</span></div></button></div>
+      <div class="col-12 col-md-6 col-lg-4"><button type="button" class="btn btn-marmita-proteina w-100 d-flex align-items-center p-3 text-start"><div class="img-container me-3 bg-light overflow-hidden"><img src="./img/pure-batata.svg" alt="Purê de Batata"></div><div class="text-white overflow-hidden"><strong class="d-block fs-5 mb-1 text-truncate">Purê de Batata</strong><span class="d-block small text-light text-truncate opacity-75">Purê de batata cremoso.</span></div></button></div>
+      <div class="col-12 col-md-6 col-lg-4"><button type="button" class="btn btn-marmita-proteina w-100 d-flex align-items-center p-3 text-start"><div class="img-container me-3 bg-light overflow-hidden"><img src="./img/legumes.svg" alt="Legumes"></div><div class="text-white overflow-hidden"><strong class="d-block fs-5 mb-1 text-truncate">Legumes</strong><span class="d-block small text-light text-truncate opacity-75">Legumes selecionados.</span></div></button></div>
+    </div>
+  </main>
+
+  <div class="marmita-summary">
+    <div class="summary-total"><span>Valor total</span><strong>R$ 0,00</strong></div>
+    <div class="col-12 col-sm-auto d-flex gap-3">
+      <a href="montarmarmita3.html" class="next-link"><button type="button" class="btn-next-marmita"><i class="bi bi-arrow-left"></i> Voltar</button></a>
+      <a href="carrinho.html" class="next-link"><button type="button" class="btn-next-marmita">Finalizar <i class="bi bi-cart-check"></i></button></a>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
